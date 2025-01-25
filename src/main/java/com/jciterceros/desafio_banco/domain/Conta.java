@@ -35,7 +35,7 @@ public class Conta implements IConta {
     }
 
     @Override
-    public void transferir(Double valor, IConta contaDestino) throws SaldoException{
+    public void transferir(Double valor, IConta contaDestino) throws SaldoException {
         if (saldo < valor) {
             throw new SaldoException();
         }
@@ -45,7 +45,6 @@ public class Conta implements IConta {
 
     @Override
     public void imprimirExtrato() {
-        System.out.println("Extrato da conta: ");
         System.out.println("Agência: " + this.agencia);
         System.out.println("Número: " + this.numero);
         System.out.println("Cliente: " + this.cliente.getNome());
