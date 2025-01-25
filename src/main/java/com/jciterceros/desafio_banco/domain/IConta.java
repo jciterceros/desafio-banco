@@ -7,7 +7,7 @@ public interface IConta {
 
     void depositar(Double valor);
 
-    void transferir(Double valor, IConta contaDestino);
+    void transferir(Double valor, IConta contaDestino) throws SaldoException;
 
     void imprimirExtrato();
 }
