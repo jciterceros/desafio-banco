@@ -11,7 +11,7 @@ public class ContaCorrente extends Conta {
     @Override
     public void imprimirExtrato() {
         log.info("Imprimindo extrato da conta corrente");
-        System.out.println("Extrato da conta corrente");
+        log.info("Extrato da conta corrente");
         super.imprimirExtrato();
     }
 }

@@ -15,14 +15,14 @@ public class Banco {
     private List<Conta> contas = new ArrayList<>();
 
     public void adicionarConta(Conta conta) {
-        if (conta != null) {
+        if (conta == null) {
             throw new IllegalArgumentException("Conta não pode ser nula");
         }
         contas.add(conta);
     }
 
     public void removerConta(Conta conta) {
-        if (conta != null) {
+        if (conta == null) {
             throw new IllegalArgumentException("Conta não pode ser nula");
         }
         contas.remove(conta);

@@ -11,7 +11,7 @@ public class ContaPoupanca extends Conta {
     @Override
     public void imprimirExtrato() {
         log.info("Imprimindo extrato da conta poupança");
-        System.out.println("Extrato da conta poupança");
+        log.info("Extrato da conta poupança");
         super.imprimirExtrato();
     }
 }
