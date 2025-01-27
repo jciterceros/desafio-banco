@@ -11,7 +11,7 @@ public class ContaService {
         conta.depositar(valor);
     }
 
-    public void realizarTransferencia(Conta contaOrigem, Conta contaDestino, Double valor) {
+    public void realizarTransferencia(Conta contaOrigem, Conta contaDestino, Double valor) throws SaldoException {
         try {
             contaOrigem.transferir(valor, contaDestino);
             imprimirExtrato(contaOrigem);
@@ -19,15 +19,20 @@ public class ContaService {
         } catch (SaldoException e) {
             log.info(e.getMessage());
         }
+//        contaOrigem.transferir(valor, contaDestino);
+//        imprimirExtrato(contaOrigem);
+//        imprimirExtrato(contaDestino);
     }
 
-    public void realizarSaque(Conta conta, Double valor) {
+    public void realizarSaque(Conta conta, Double valor) throws SaldoException{
         try {
             conta.sacar(valor);
             imprimirExtrato(conta);
         } catch (SaldoException e) {
             log.info(e.getMessage());
         }
+//        conta.sacar(valor);
+//        imprimirExtrato(conta);
     }
 
     public void imprimirExtrato(Conta conta) {
