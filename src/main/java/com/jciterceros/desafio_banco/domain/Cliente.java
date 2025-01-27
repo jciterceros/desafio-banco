@@ -15,17 +15,13 @@ public class Cliente {
     private String nome;
 
     public void setNome(String nome) {
-        try {
-            validarNome(nome);
-        } catch (IllegalArgumentException e) {
-            log.info(e.getMessage());
-            System.exit(0);
-        }
+        validarNome(nome);
         this.nome = nome;
     }
 
     public void validarNome(String nome) {
         if (nome == null || nome.trim().isEmpty()) {
+            log.error("Nome não pode ser nulo ou vazio");
             throw new IllegalArgumentException("Nome não pode ser nulo ou vazio");
         }
     }
