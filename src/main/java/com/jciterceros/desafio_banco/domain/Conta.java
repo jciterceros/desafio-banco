@@ -1,22 +1,28 @@
 package com.jciterceros.desafio_banco.domain;
 
 import com.jciterceros.desafio_banco.exceptions.SaldoException;
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 public class Conta implements IConta {
 
     private static final Integer AGENCIA_PADRAO = 1;
-    private static Integer SEQUENCIAL = 1;
+    private static Integer sequencia = 1;
 
-    protected Integer agencia;
-    protected Integer numero;
-    protected Double saldo;
-    protected Cliente cliente;
+    private Integer agencia;
+    private Integer numero;
+    private Double saldo;
+    private Cliente cliente;
 
     public Conta(Cliente cliente) {
         this.agencia = AGENCIA_PADRAO;
-        this.numero = SEQUENCIAL++;
+        this.numero = sequencia++;
         this.cliente = cliente;
         this.saldo = 0.0;
     }

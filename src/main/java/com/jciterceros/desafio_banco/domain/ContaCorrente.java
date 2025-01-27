@@ -1,6 +1,6 @@
 package com.jciterceros.desafio_banco.domain;
 
-public class ContaCorrente extends Conta{
+public class ContaCorrente extends Conta {
     public ContaCorrente(Cliente cliente) {
         super(cliente);
     }
